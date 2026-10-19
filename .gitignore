@@ -1,0 +1,47 @@
+# Compiled class files
+**/target/
+*.class
+
+# Log files
+*.log
+logs/
+
+# Package Files
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Node / Frontend
+**/node_modules/
+**/dist/
+frontend/dist/
+frontend/build/
+.npm
+.eslintcache
+
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# Uploads & Runtime Files
+uploads/
+**/uploads/
+
+# IDE and OS
+.idea/
+*.iml
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+Thumbs.db

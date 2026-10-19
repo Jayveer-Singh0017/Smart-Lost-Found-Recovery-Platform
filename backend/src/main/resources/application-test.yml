@@ -1,0 +1,52 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: smart-lost-found-backend-test
+
+  datasource:
+    url: jdbc:h2:mem:testdb;MODE=MySQL;DATABASE_TO_LOWER=TRUE;DB_CLOSE_DELAY=-1
+    username: sa
+    password: ""
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: false
+        dialect: org.hibernate.dialect.H2Dialect
+
+  flyway:
+    enabled: false
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 20MB
+
+app:
+  jwt:
+    secret: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+    expiration-ms: 3600000
+  cors:
+    allowed-origins: http://localhost:5173
+  upload:
+    dir: ./target/test-uploads
+    allowed-extensions: jpg,jpeg,png,webp
+  admin:
+    initial-email: ${ADMIN_INITIAL_EMAIL:admin@smartlostfound.com}
+    initial-password: ${ADMIN_INITIAL_PASSWORD:Admin@123456}
+    initial-name: ${ADMIN_INITIAL_NAME:Platform Administrator}
+    reset-password-on-startup: ${ADMIN_RESET_PASSWORD_ON_STARTUP:false}
+  matching:
+    min-score-threshold: 30
+    weights:
+      category: 35
+      text-similarity: 30
+      location: 20
+      date-proximity: 15

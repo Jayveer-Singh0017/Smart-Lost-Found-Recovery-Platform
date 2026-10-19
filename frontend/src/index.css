@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#0B1020] text-[#F1F5F9] antialiased selection:bg-[#6D5EF7] selection:text-white;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    min-height: 100vh;
+  }
+
+  /* Custom dark scrollbars */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0B1020;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2B3850;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #6D5EF7;
+  }
+}
+
+/* Dark SaaS glass and elevated surface styles */
+.glass-nav {
+  background: rgba(18, 26, 43, 0.90);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid #2B3850;
+}
+
+.glass-card {
+  background: rgba(18, 26, 43, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid #2B3850;
+}
+
+.dark-surface {
+  background-color: #121A2B;
+  border: 1px solid #2B3850;
+}
+
+.dark-card {
+  background-color: #182338;
+  border: 1px solid #2B3850;
+}
+
+.subtle-ring {
+  @apply ring-1 ring-[#2B3850] hover:ring-[#6D5EF7]/50 transition-all duration-200;
+}
+
+/* Inputs styling */
+.dark-input {
+  @apply bg-[#182338] border border-[#2B3850] text-[#F1F5F9] placeholder-slate-400 rounded-xl px-4 py-2.5 text-sm transition focus:outline-none focus:ring-2 focus:ring-[#6D5EF7]/50 focus:border-[#6D5EF7];
+}
